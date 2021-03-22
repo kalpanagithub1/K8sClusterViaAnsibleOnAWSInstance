@@ -24,8 +24,8 @@
          key_name: NewKeyTask12
          name: "{{ master_name }}"
          state: present
-         aws_access_key: AKIA5VMGLKJUCH35DXQQ
-         aws_secret_key: YFxZvx9AL3HoEoe1YwUxi3Gr9M5Qb+3Dz+0LFRQA
+         aws_access_key: <your AWS access key>
+         aws_secret_key: <your AWS secret key>
      register: MasterInstance
    - debug: 
           var: MasterInstance.instances[0].public_ip_address
@@ -40,8 +40,8 @@
          key_name: NewKeyTask12
          name: "{{ worker1_name }}"
          state: present
-         aws_access_key: AKIA5VMGLKJUCH35DXQQ
-         aws_secret_key: YFxZvx9AL3HoEoe1YwUxi3Gr9M5Qb+3Dz+0LFRQA
+         aws_access_key: <your AWS access key>
+         aws_secret_key: <your AWS secret key>
      register: WorkerInstance1
    - debug:
           var: WorkerInstance1.instances[0].public_ip_address
@@ -56,8 +56,8 @@
          key_name: NewKeyTask12
          name: "{{ worker2_name }}"
          state: present
-         aws_access_key: AKIA5VMGLKJUCH35DXQQ
-         aws_secret_key: YFxZvx9AL3HoEoe1YwUxi3Gr9M5Qb+3Dz+0LFRQA
+         aws_access_key: <your AWS access key>
+         aws_secret_key: <your AWS access key>
      register: WorkerInstance2
    - debug:
           var: WorkerInstance2.instances[0].public_ip_address
