@@ -1,0 +1,22 @@
+---
+ - hosts: master
+   tasks:
+   - name: Creating CNI/Flannel
+     shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+   - name: Creating deployment
+     shell: kubectl create deploy mypod1 --image=httpd
+     register: a
+   - debug:
+           var: a
+   - name: Getting pods
+     shell: kubectl get pods
+     register: b
+   - debug:
+           var: b
+   - name: Exposing pod
+     shell: kubectl expose deploy mypod1 --port=80 --type=NodePort
+   - name: Getting Service
+     shell: kubectl get svc
+     register: c
+   - debug: 
+           var: c
